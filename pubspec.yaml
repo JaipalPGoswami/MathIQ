@@ -1,4 +1,4 @@
-name: math_facts_ai
+﻿name: math_facts_ai
 description: "Math Facts AI - AI-powered mathematics learning application for KG to Grade 3 children"
 publish_to: 'none'
 version: 1.0.0+1
@@ -14,12 +14,10 @@ dependencies:
   # State Management
   flutter_riverpod: ^2.5.1
 
-  # Local SQLite Database
-  drift: ^2.16.0
-  drift_flutter: ^0.1.1
-  sqlite3_flutter_libs: ^0.5.21
+  # File and Storage Utilities
   path_provider: ^2.1.2
   path: ^1.9.0
+  shared_preferences: ^2.2.3
 
   # UI, Fonts & Animations
   google_fonts: ^6.2.1
@@ -33,7 +31,6 @@ dependencies:
   http: ^1.2.1
 
   # Utilities
-  shared_preferences: ^2.2.3
   uuid: ^4.4.0
   intl: ^0.19.0
 
@@ -41,8 +38,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
-  drift_dev: ^2.16.0
-  build_runner: ^2.4.9
 
 flutter:
   uses-material-design: true
