@@ -37,20 +37,11 @@ jobs:
         run: flutter pub get
 
       - name: Build Debug APK
-        run: |
-          flutter build apk --debug 2>&1 | tee build.log
-
-      - name: Upload Build Log
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-log
-          path: build.log
+        run: flutter build apk --debug
 
       - name: Upload Debug APK Artifact
-        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: MathFactsAI-debug-apk
-          path: build/**/*.apk
+          path: build/app/outputs/flutter-apk/*.apk
           retention-days: 14
