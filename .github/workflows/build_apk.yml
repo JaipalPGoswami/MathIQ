@@ -29,7 +29,9 @@ jobs:
           cache: true
 
       - name: Ensure Android platform files
-        run: flutter create --platforms=android --org com.mathfacts .
+        run: |
+          flutter create --platforms=android --org com.mathfacts .
+          echo "android.newDsl=false" >> android/gradle.properties
 
       - name: Install Dependencies
         run: flutter pub get
