@@ -16,6 +16,7 @@ class PatternGenerator extends BaseGenerator {
         {'seq': '🔺, 🟩, 🔺, 🟩, ?', 'c': '🔺', 'opts': ['🔺', '🟩', '⚪', '🔷']},
       ];
       final p = patterns[random.nextInt(patterns.length)];
+      final seq = p['seq'] as String;
       final correct = p['c'] as String;
       final options = List<String>.from(p['opts'] as List)..shuffle(random);
 
@@ -24,10 +25,10 @@ class PatternGenerator extends BaseGenerator {
         grade: grade,
         difficulty: difficulty,
         problemType: ProblemType.multipleChoice,
-        questionText: 'What comes next in the pattern? ${p['seq']}',
+        questionText: 'What comes next in the pattern? $seq',
         correctAnswer: correct,
         options: options,
-        explanation: 'The pattern repeats! After ${p['seq'].split(', ')[3]} comes $correct.',
+        explanation: 'The pattern repeats! After ${seq.split(', ')[3]} comes $correct.',
       );
     } else {
       // Number sequence pattern

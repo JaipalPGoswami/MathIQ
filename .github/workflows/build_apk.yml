@@ -32,6 +32,8 @@ jobs:
         run: |
           rm -rf android/
           flutter create --project-name math_facts_ai --platforms=android --org com.mathfacts .
+          sed -i 's/compileSdk = [0-9]\+/compileSdk = 36/g' android/app/build.gradle* || true
+          sed -i 's/compileSdkVersion [0-9]\+/compileSdkVersion 36/g' android/app/build.gradle* || true
 
       - name: Install Dependencies
         run: flutter pub get

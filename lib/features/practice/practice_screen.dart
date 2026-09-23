@@ -13,6 +13,7 @@ import '../../data/repositories/stats_repository.dart';
 import '../../math_engine/models/math_problem.dart';
 import '../../math_engine/models/problem_type.dart';
 import '../../math_engine/models/difficulty_level.dart';
+import '../../math_engine/models/visual_item.dart';
 import '../../math_engine/generators/math_engine_facade.dart';
 import '../../math_engine/adaptive/adaptive_engine.dart';
 import '../../widgets/visuals/math_illustration.dart';

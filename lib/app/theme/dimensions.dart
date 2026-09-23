@@ -13,5 +13,6 @@ class AppDimensions {
   static const double radiusCircular = 999.0;
 
   static const double minTouchTarget = 56.0;
+  static const double kidButtonHeight = 56.0;
   static const double maxContentWidth = 720.0; // Responsive tablet clamp
 }
