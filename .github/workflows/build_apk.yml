@@ -38,10 +38,14 @@ jobs:
         run: flutter pub get
 
       - name: Build Debug APK
-        run: flutter build apk --debug --android-skip-build-dependency-validation
-
-      - name: List Generated APK Files
-        run: find build -name "*.apk" -ls
+        run: |
+          flutter build apk --debug --android-skip-build-dependency-validation -v > build.log 2>&1 || true
+          APKS=$(find build -name "*.apk" 2>/dev/null || true)
+          if [ -z "$APKS" ]; then
+            echo "::error::APK build failed! Extracting error details from log:"
+            tail -n 60 build.log
+            exit 1
+          fi
 
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4
