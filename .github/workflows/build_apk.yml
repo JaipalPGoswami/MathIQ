@@ -31,13 +31,14 @@ jobs:
       - name: Ensure Android platform files
         run: |
           flutter create --platforms=android --org com.mathfacts .
+          rm -f android/build.gradle.kts android/settings.gradle.kts android/app/build.gradle.kts
           echo "android.newDsl=false" >> android/gradle.properties
 
       - name: Install Dependencies
         run: flutter pub get
 
       - name: Build Debug APK
-        run: flutter build apk --debug
+        run: flutter build apk --debug --android-skip-build-dependency-validation
 
       - name: List Generated APK Files
         run: find build -name "*.apk" -ls
