@@ -31,8 +31,8 @@ jobs:
       - name: Regenerate Android project
         run: |
           rm -rf android/
-          flutter create --platforms=android --org com.mathfacts .
-          cat android/settings.gradle
+          flutter create --project-name math_facts_ai --platforms=android --org com.mathfacts .
+          ls -la android/
 
       - name: Install Dependencies
         run: flutter pub get
